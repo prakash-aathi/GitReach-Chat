@@ -2,6 +2,9 @@ package com.chat;
 
 import java.nio.file.Path;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.cassandra.CqlSessionBuilderCustomizer;
@@ -12,10 +15,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chat.config.DataStaxAstraProperties;
+import com.chat.model.FolderModel;
+import com.chat.repository.FolderRepo;
+
+import lombok.RequiredArgsConstructor;
 
 @SpringBootApplication
 @RestController
+// @RequiredArgsConstructor
 public class GitChatConnectApplication {
+
+	// private final FolderRepo folderRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GitChatConnectApplication.class, args);
@@ -37,4 +47,9 @@ public class GitChatConnectApplication {
 		Path bundle = astraProperties.getSecureConnectBundle().toPath();
 		return builder -> builder.withCloudSecureConnectBundle(bundle);
 	}
+
+	// @PostConstruct
+	// public void initializeData() {
+	// 	folderRepo.save(new FolderModel("prakash-aathi","inbox","blue"));
+	// }
 }
