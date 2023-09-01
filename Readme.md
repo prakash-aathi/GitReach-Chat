@@ -1,3 +1,7 @@
+# Git Reach Chat
+
+Talk easily with fellow developers using just their GitHub usernames. No more emails – connect, chat, and collaborate hassle-free for smoother coding discussions
+
 ## Tech stack
 
 - spring boot - the backend framework used is Spring Boot ... it is a Java-based framework used to build endpoints
