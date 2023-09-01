@@ -10,10 +10,12 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 import org.springframework.data.cassandra.core.mapping.CassandraType.Name;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Table(value = "messages_by_id")
+@Builder  
 public class Message {
     
     @Id @PrimaryKeyColumn(name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)

@@ -7,10 +7,12 @@ import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyClass;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 
+import lombok.Builder;
 import lombok.Data;
 
 @PrimaryKeyClass
 @Data
+@Builder
 public class MessageListPrimaryKey {
     
     @PrimaryKeyColumn(name = "user_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
