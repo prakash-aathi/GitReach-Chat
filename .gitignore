@@ -39,3 +39,7 @@ application.yml
 
 ### Maven ###
 .mvn 
+
+### peronal ###
+/notes
+/secret keys
