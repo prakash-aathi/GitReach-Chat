@@ -10,10 +10,12 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Table(value = "message_list")
 @Data
 @Builder
+@RequiredArgsConstructor
 public class MessageList {
 
     @PrimaryKey
@@ -34,8 +36,6 @@ public class MessageList {
     @Transient
     private String agoTimeString;
 
-    public MessageList() {
-    }
     
     public MessageList(MessageListPrimaryKey id, String from, List<String> to, String subject, boolean isRead,
             String agoTimeString) {

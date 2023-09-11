@@ -14,6 +14,7 @@ import com.chat.model.MessageList;
 import com.chat.model.MessageListPrimaryKey;
 import com.chat.repository.MessageListRepo;
 import com.chat.repository.Messagerepo;
+import com.chat.repository.UnreadMessageRepo;
 import com.datastax.oss.driver.api.core.uuid.Uuids;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ public class ComposeService {
 
         private final Messagerepo messagerepo;
         private final MessageListRepo messageListRepo;
+        private final UnreadMessageRepo unreadMessageRepo;
 
         public ResponseEntity<String> send(MessageRequest message) {
 
@@ -48,13 +50,15 @@ public class ComposeService {
                 // Save message to folder for each recipient
                 to.stream().forEach(toId -> {
                         MessageList messageList = convertToMessageList(message, to, prepareMessage, toId, "INBOX");
-
                         messageListRepo.save(messageList);
 
+                        // incresing counter for unread message
+                        unreadMessageRepo.incrementUnreadCounter(toId, "INBOX");
                 });
 
                 // Save message to sender's sent folder
                 MessageList messageList = convertToMessageList(message, to, prepareMessage, message.getFrom(), "SENT");
+                messageList.setRead(true);
                 messageListRepo.save(messageList);
 
                 return ResponseEntity.ok("Message sent successfully");

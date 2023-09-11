@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chat.model.FolderModel;
+import com.chat.dto.FolderResponse;
 import com.chat.service.FolderService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class FolderController {
     private final FolderService folderService;
     
     @GetMapping()
-    public ResponseEntity<List<FolderModel>> getAllFolders(@AuthenticationPrincipal OAuth2User principal) {
+    public ResponseEntity<List<FolderResponse>> getAllFolders(@AuthenticationPrincipal OAuth2User principal) {
 
         String name = principal.getAttribute("login");
 

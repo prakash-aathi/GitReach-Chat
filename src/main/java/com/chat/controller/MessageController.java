@@ -26,7 +26,7 @@ public class MessageController {
     public ResponseEntity<Message> getMessage(@PathVariable UUID id, @AuthenticationPrincipal OAuth2User principal) {
         if (principal == null || principal.getAttribute("login") == null)
             return ResponseEntity.badRequest().build();
-        return messageService.getMessage(id);
+        return messageService.getMessage(id,principal.getAttribute("login"));
     }
 
 }
