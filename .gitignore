@@ -34,7 +34,6 @@ build/
 
 ### casandra ###
 secure.zip
-application.yml
 
 
 ### Maven ###
@@ -42,4 +41,4 @@ application.yml
 
 ### peronal ###
 /notes
-/secret keys
+/secretkeys

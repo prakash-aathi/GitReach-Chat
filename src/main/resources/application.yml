@@ -1,0 +1,36 @@
+# you can create github oauth client id and secret from github developer settings replace them in application.yml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 
+            client-secret: 
+# you can create asta db from datastax website and replace the keyspace name, username and password in application.yml
+# and also download the secure.zip file and add it in resources folder
+# in prodction don't forget to change the schema-action to none
+  data:
+    cassandra:
+      keyspace-name: main
+      username: 
+      password: 
+      schema-action: recreate-drop-unused
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+# you can replce id region and token from astra db connect page
+astra:
+  db:
+    id: 
+    region: 
+    keyspace: main
+    application:
+      token: 
+      
+# download the zip file from astra db connect page and add it in resources folder 
+datastax.astra:
+  secure-connect-bundle: secure.zip
