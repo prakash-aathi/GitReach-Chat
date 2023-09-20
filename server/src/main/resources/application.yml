@@ -5,18 +5,16 @@ spring:
       client:
         registration:
           github:
-            # client-id: d330a06ccbc23cd8766c
-            # client-secret: e7d59f98e8e7847f4f87ae21348b37023177edea
-            client-id: 8edce5b8faeb3acd1746
-            client-secret: 3f6d0c807b01e02aa6769e2a118c8ddf3fd3f275
+            client-id: 
+            client-secret: 
 # you can create asta db from datastax website and replace the keyspace name, username and password in application.yml
 # and also download the secure.zip file and add it in resources folder
 # in prodction don't forget to change the schema-action to none
   data:
     cassandra:
       keyspace-name: main
-      username: jXvodjQvIhHuaaFTuStaykrA
-      password: 4.J59.C0ae__7FIoLk4Wx1l9XxjooeK7dW+h0OnsIrdXOk6eaGkvyqS3ZzOR8sM4LWqKr-DwkPHBrawvZd-Xm_ExQk-i,FSHTLXTns5r,YX70g8FQt-fKJt1Dma8ZWOe
+      username: 
+      password: 
       schema-action: recreate-drop-unused
       request:
         timeout: 10s
@@ -27,11 +25,11 @@ spring:
 # you can replce id region and token from astra db connect page
 astra:
   db:
-    id: 8c39f6a0-5a45-49f1-b861-c4c088bc48b1-1
-    region: asia-south1
+    id: 
+    region: 
     keyspace: main
     application:
-      token: AstraCS:jXvodjQvIhHuaaFTuStaykrA:78eb5bc5250392331e9097596c5997c91a7c1198f6832c3612dc9256f29522d6
+      token: AstraCS::
 
 # download the zip file from astra db connect page and add it in resources folder 
 datastax.astra:
