@@ -11,3 +11,12 @@ Talk easily with fellow developers using just their GitHub usernames. No more em
 - typescript - the language used is TypeScript ... it is a superset of JavaScript that adds static type definitions
 - tailwind css - the CSS framework used is Tailwind CSS ... it is a utility-first CSS framework for rapidly building custom designs
 - apollo - the GraphQL client used is Apollo ... it is a GraphQL client that allows you to easily query the exact data you need from a GraphQL server
+
+### EndPoints
+
+- `GET /login` - redirects to GitHub login page
+- `GET /folders/save` - saves a folder to the database 
+- `GET /folders` - returns all folders
+- `POST /compose` - creates a new message
+- `GET /messages` - returns all messages
+- `GET /message/:id` - returns a message by id
