@@ -1,6 +1,5 @@
-import styles from './page.module.css'
 import { Dancing_Script } from 'next/font/google'
-
+import 'bootstrap/dist/css/bootstrap.css'
 const inter = Dancing_Script({ subsets: ['latin'] })
 
 export default function Home() {
