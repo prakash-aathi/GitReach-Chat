@@ -17,6 +17,7 @@ export default function Home() {
             <p className='text-center '>Log in to your account</p>
 
             {/* login with github button */}
+            {/* login without github button-fake comment */}
             <div className='d-flex justify-content-center align-items-center pb-4 '>
               <a href="http://localhost:8080/oauth2/authorization/github"
                 className='btn btn-outline-danger btn-lg'>
