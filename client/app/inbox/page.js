@@ -7,6 +7,7 @@ const page = () => {
   return (
     <div>
       {/* modal compose */}
+      {/*ModAl non compose*/}
       <div
         className="modal fade"
         id="exampleModal"
